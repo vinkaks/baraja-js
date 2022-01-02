@@ -134,6 +134,20 @@
     <script type="text/javascript">
       var baraja = window.baraja(document.getElementById('baraja-el'));
 
+      baraja.setFanSettings({
+          direction: "left",
+          easing: "ease-out",
+          origin: {
+            x: 40,
+            y: 400,
+          },
+          speed: 400,
+          range: 40,
+          translation: 400,
+          center: false,
+          scatter: true,
+        })
+
        // Left arrow
       document.getElementById('nav-prev')
         .addEventListener('click', function() {

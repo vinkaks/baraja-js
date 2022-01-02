@@ -1,3 +1,4 @@
+/* eslint-disable max-statements */
 /**
  *  BarajaJS
  *  A plugin for spreading items in a card-like fashion.
@@ -402,6 +403,10 @@ function Baraja(container, options = {}) {
     });
   }
 
+  function setFanSettings(settings = {}){
+    self.fanSettings = validateDefaultFanSettings(settings);
+  }
+
   /**
    * Spread the stack based on defined settings.
    *
@@ -637,6 +642,10 @@ function Baraja(container, options = {}) {
     if (!self.isAnimating) {
       close();
     }
+  };
+
+  this.setFanSettings = (settings)=>{
+    dispatch(setFanSettings,settings);
   };
 }
 
