@@ -22,7 +22,8 @@ function Baraja(container, options = {}) {
 
   const defaults = {
     easing: 'ease-in-out',
-    speed:  300
+    speed:  300,
+    tapAnimations: true
   };
 
   (function() {
@@ -274,9 +275,10 @@ function Baraja(container, options = {}) {
     if (!self.isClosed) {
       close(callback, element);
     } else {
-      fan();
+      if (self.options.tapAnimations){
+        fan();
+      }
     }
-
     if (isTop) {
       return;
     }
